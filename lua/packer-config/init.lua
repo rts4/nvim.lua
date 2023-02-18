@@ -14,10 +14,8 @@ return require("packer").startup(function(use)
 	use("nvim-lua/plenary.nvim")
 
 	-- Treesitter
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = "TSUpdate",
-	})
+	use("nvim-treesitter/nvim-treesitter")
+	use("nvim-treesitter/playground")
 
 	-- Telescope
 	use({
