@@ -16,6 +16,7 @@ local sources = {
 	formatting.markdownlint,
 	formatting.black,
 	formatting.beautysh,
+	formatting.xmlformat,
 
 	--[[ code actions ]]
 	code_actions.eslint_d,
