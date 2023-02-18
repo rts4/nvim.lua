@@ -1,6 +1,7 @@
 # Neovim
 
 This is my Neovim setup using [packer.nvim](https://github.com/wbthomason/packer.nvim). See my `packer-config` for all of the plugins I use.
+(I'm still quite new to Neovim, so my config is probably quite messy)
 
 ![preview](./img/nvim-main.png)
 

@@ -15,6 +15,7 @@ local sources = {
 	formatting.phpcbf,
 	formatting.markdownlint,
 	formatting.black,
+	formatting.beautysh,
 
 	--[[ code actions ]]
 	code_actions.eslint_d,

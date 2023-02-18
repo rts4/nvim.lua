@@ -100,7 +100,7 @@ require("lspconfig")["lua_ls"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["kotlin_language_server"].setup({
+require("lspconfig")["bashls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
