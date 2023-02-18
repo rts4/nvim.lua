@@ -24,7 +24,6 @@ local sources = {
 
 	--[[ diagnostics ]]
 	diagnostics.eslint_d,
-	diagnostics.codespell,
 	diagnostics.flake8,
 	diagnostics.revive,
 	diagnostics.tsc,
