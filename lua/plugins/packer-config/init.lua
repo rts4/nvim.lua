@@ -89,6 +89,7 @@ return require("packer").startup(function(use)
 
 	-- Comment
 	use("numToStr/Comment.nvim")
+	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	-- Notify
 	use("rcarriga/nvim-notify")
