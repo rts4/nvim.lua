@@ -2,8 +2,9 @@ local set = vim.opt
 
 set.expandtab = true
 set.smarttab = true
-set.shiftwidth = 4
-set.tabstop = 4
+set.shiftwidth = 2
+set.tabstop = 2
+set.autoindent = true
 
 set.hlsearch = true
 set.incsearch = true
@@ -30,6 +31,9 @@ set.hidden = true
 set.mouse = "a"
 
 set.fillchars = "eob: "
+
+set.clipboard:append("unnamedplus")
+set.iskeyword:append("-")
 
 vim.cmd("colorscheme carbonfox")
 
