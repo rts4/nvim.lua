@@ -109,4 +109,7 @@ return require("packer").startup(function(use)
 
 	-- Trouble
 	use("folke/trouble.nvim")
+
+	-- LSP Lines
+	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
 end)
