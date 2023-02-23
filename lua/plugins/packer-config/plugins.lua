@@ -112,4 +112,7 @@ return require("packer").startup(function(use)
 
 	-- LSP Lines
 	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
+
+	-- Git signs
+	use("lewis6991/gitsigns.nvim")
 end)
