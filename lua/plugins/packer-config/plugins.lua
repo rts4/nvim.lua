@@ -56,6 +56,7 @@ return require("packer").startup(function(use)
 	use("L3MON4D3/LuaSnip")
 	use("onsails/lspkind.nvim")
 	use("jose-elias-alvarez/null-ls.nvim")
+	use("rafamadriz/friendly-snippets")
 
 	-- Lualine
 	use({

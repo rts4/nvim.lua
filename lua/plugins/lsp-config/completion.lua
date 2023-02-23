@@ -1,6 +1,7 @@
 local luasnip = require("luasnip")
 local cmp = require("cmp")
 local lspkind = require("lspkind")
+require("luasnip/loaders/from_vscode").lazy_load()
 
 cmp.setup({
 	formatting = {
@@ -55,5 +56,7 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "luasnip" },
 		{ name = "neorg" },
+		{ name = "buffer" },
+		{ name = "path" },
 	},
 })
