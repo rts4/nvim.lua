@@ -106,4 +106,7 @@ return require("packer").startup(function(use)
 
 	-- Vim Surround
 	use("tpope/vim-surround")
+
+	-- Trouble
+	use("folke/trouble.nvim")
 end)

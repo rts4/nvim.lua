@@ -1,7 +1,7 @@
 require("core.options")
 require("core.keymap-config")
 
-require("plugins.packer-config.plugins");
+require("plugins.packer-config.plugins")
 require("plugins.nvim-tree-config")
 require("plugins.mason-config")
 require("plugins.fidget-config")
@@ -20,3 +20,4 @@ require("plugins.comment-nvim-config")
 require("plugins.treesitter-config")
 require("plugins.neorg-config")
 require("plugins.telescope-config")
+require("plugins.trouble")

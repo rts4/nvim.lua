@@ -43,3 +43,5 @@ map("n", "<C-p>", ":BufferPick<CR>", opts)
 map("n", "<leader>bb", ":BufferOrderByBufferNumber<CR>", opts)
 map("n", "<leader>bd", ":BufferOrderByDirectory<CR>", opts)
 map("n", "<leader>bl", ":BufferOrderByLanguage<CR>", opts)
+--> trouble mappings <--
+map("n", "<leader>tt", ":Trouble<CR>", opts)

@@ -6,7 +6,6 @@ local diagnostics = null_ls.builtins.diagnostics
 
 local sources = {
 	--[[ formatting ]]
-	formatting.eslint_d,
 	formatting.autopep8,
 	formatting.stylua,
 	formatting.stylelint,
@@ -19,11 +18,14 @@ local sources = {
 	formatting.xmlformat,
 
 	--[[ code actions ]]
-	code_actions.eslint_d,
 	code_actions.proselint,
 
 	--[[ diagnostics ]]
-	diagnostics.eslint_d,
+	diagnostics.eslint_d.with({
+		condition = function(utils)
+			return utils.root_has_file(".eslintrc.js") or utils.root_has_file(".eslintrc.json")
+		end,
+	}),
 	diagnostics.flake8,
 	diagnostics.revive,
 	diagnostics.tsc,
