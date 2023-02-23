@@ -3,6 +3,14 @@ local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = " " -- leader key
 
+--> main keymaps <--
+map("n", "<leader>nh", ":nohl<CR>", opts)
+map("n", "<leader>+", "<C-a>", opts)
+map("n", "<leader>-", "<C-x>", opts)
+map("n", "<leader>sv", "<C-w>v", opts)
+map("n", "<leader>sh", "<C-w>s", opts)
+map("n", "<leader>se", "<C-w>=", opts)
+map("n", "<leader>sx", ":close<CR>", opts)
 --> truezen <--
 map("n", "<leader>za", ":TZAtaraxis<CR>", {})
 map("n", "<leader>zm", ":TZMinimalist<CR>", {})
