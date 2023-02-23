@@ -2,7 +2,7 @@ vim.cmd([[packadd packer.nvim]])
 vim.cmd([[
     augroup packer_user_config
         autocmd!
-        autocmd BufWritePost ./init.lua source <afile> | PackerSync
+        autocmd BufWritePost plugins.lua source <afile> | PackerSync
     augroup end
 ]])
 
@@ -100,5 +100,9 @@ return require("packer").startup(function(use)
 		-- run = ":Neorg sync-parsers",
 	})
 
+	-- Lazygit
 	use("kdheepak/lazygit.nvim")
+
+	-- Vim Surround
+	use("tpope/vim-surround")
 end)
