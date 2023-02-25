@@ -16,6 +16,7 @@ require("nvim-treesitter.configs").setup({
 		"json",
 		"markdown",
 		"toml",
+		"elixir",
 	},
 	sync_install = false,
 	highlight = {
