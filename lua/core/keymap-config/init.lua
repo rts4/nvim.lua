@@ -45,3 +45,8 @@ map("n", "<leader>bd", ":BufferOrderByDirectory<CR>", opts)
 map("n", "<leader>bl", ":BufferOrderByLanguage<CR>", opts)
 --> trouble mappings <--
 map("n", "<leader>tt", ":Trouble<CR>", opts)
+--> dap <--
+map("n", "<leader>tb", ':lua require("dap").toggle_breakpoint()<CR>', opts)
+map("n", "<leader>so", ':lua require("dap").step_over()<CR>', opts)
+map("n", "<leader>si", ':lua require("dap").step_into()<CR>', opts)
+map("n", "<leader>dd", ':lua require("dapui").toggle()<CR>', opts)

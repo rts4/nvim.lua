@@ -47,6 +47,11 @@ return require("packer").startup(function(use)
 			"mfussenegger/nvim-dap",
 		},
 	})
+	use("mfussenegger/nvim-dap")
+	use({
+		"rcarriga/nvim-dap-ui",
+		requires = { "mfussenegger/nvim-dap" },
+	})
 
 	-- Completion
 	use("hrsh7th/nvim-cmp")
@@ -115,4 +120,7 @@ return require("packer").startup(function(use)
 
 	-- Git signs
 	use("lewis6991/gitsigns.nvim")
+
+	-- Neodev
+	use("folke/neodev.nvim")
 end)
