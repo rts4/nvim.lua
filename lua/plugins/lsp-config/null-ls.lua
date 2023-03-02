@@ -13,7 +13,6 @@ local sources = {
 	formatting.autopep8,
 	formatting.stylua,
 	formatting.stylelint,
-	formatting.clang_format,
 	formatting.prettier,
 	formatting.phpcbf,
 	formatting.markdownlint,
