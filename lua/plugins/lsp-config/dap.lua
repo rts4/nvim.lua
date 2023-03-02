@@ -1,47 +1,55 @@
+require("dap-vscode-js").setup({
+	debugger_path = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter",
+	debugger_cmd = { "js-debug-adapter" },
+	adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" },
+})
+
 local dap = require("dap")
 
--- node-debug2
-dap.adapters.node2 = {
-	type = "executable",
-	command = "node",
-	args = { os.getenv("HOME") .. "/.local/share/nvim/mason/packages/node-debug2-adapter/out/src/nodeDebug.js" },
-}
-dap.configurations.javascript = {
-	{
-		name = "Launch",
-		type = "node2",
-		request = "launch",
-		program = "${file}",
-		cwd = vim.fn.getcwd(),
-		sourceMaps = true,
-		protocol = "inspector",
-		console = "integratedTerminal",
-	},
-	{
-		name = "Attach to process",
-		type = "node2",
-		request = "attach",
-		processId = require("dap.utils").pick_process,
-	},
-}
-dap.configurations.typescript = {
-	{
-		name = "Launch",
-		type = "node2",
-		request = "launch",
-		program = "${file}",
-		cwd = vim.fn.getcwd(),
-		sourceMaps = true,
-		protocol = "inspector",
-		console = "integratedTerminal",
-	},
-	{
-		name = "Attach to process",
-		type = "node2",
-		request = "attach",
-		processId = require("dap.utils").pick_process,
-	},
-}
+local customAdapter = "pwa-node-custom"
+dap.adapters[customAdapter] = function(cb, config)
+	if config.preLaunchTask then
+		local async = require("plenary.async")
+		local notify = require("notify").async
+
+		async.run(function()
+			notify("running [" .. config.preLaunchTask .. "]").events.close()
+		end, function()
+			vim.fn.system(config.preLaunchTask)
+			config.type = "pwa-node"
+			dap.run(config)
+		end)
+	end
+end
+
+-- js and ts
+for _, language in pairs({ "javascript", "typescript" }) do
+	dap.configurations[language] = {
+		{
+			name = "Launch",
+			type = "pwa-node",
+			request = "launch",
+			program = "${file}",
+			rootPath = "${workspaceFolder}",
+			cwd = "${workspaceFolder}",
+			skipFiles = { "<node_internals>/**" },
+			sourceMaps = true,
+			protocol = "inspector",
+			console = "integratedTerminal",
+			resolveSourceMapLocations = {
+				"${workspaceFolder}/",
+				"!" .. vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter",
+			},
+		},
+		{
+			name = "Attach to process",
+			type = "pwa-node",
+			request = "attach",
+			rootPath = "${workspaceFolder}",
+			processId = require("dap.utils").pick_process,
+		},
+	}
+end
 
 -- Delve (Go)
 dap.adapters.delve = {
@@ -78,7 +86,7 @@ dap.configurations.go = {
 -- Elixir
 dap.adapters.mix_task = {
 	type = "executable",
-	command = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/elixir-ls/debugger.sh",
+	command = vim.fn.stdpath("data") .. "/mason/packages/elixir-ls/debugger.sh",
 	args = {},
 }
 dap.configurations.elixir = {
