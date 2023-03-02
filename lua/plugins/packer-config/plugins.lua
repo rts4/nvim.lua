@@ -59,6 +59,7 @@ return require("packer").startup(function(use)
 		opt = true,
 		run = "npm install --legacy-peer-deps && npm run compile",
 	})
+	use("theHamsta/nvim-dap-virtual-text")
 
 	-- Completion
 	use("hrsh7th/nvim-cmp")
