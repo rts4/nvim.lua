@@ -129,3 +129,25 @@ dap.configurations.python = {
 		end,
 	},
 }
+
+-- C/C++
+dap.adapters.lldb = {
+	type = "executable",
+	name = "lldb",
+	command = "/usr/lib/llvm-14/bin/lldb-vscode",
+}
+for _, language in pairs({ "c", "cpp", "rust" }) do
+	dap.configurations[language] = {
+		{
+			name = "Launch",
+			type = "lldb",
+			request = "launch",
+			program = function()
+				return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+			end,
+			cwd = "${workspaceFolder}",
+			stopOnEntry = false,
+			args = {},
+		},
+	}
+end
