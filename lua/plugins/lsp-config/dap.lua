@@ -151,3 +151,20 @@ for _, language in pairs({ "c", "cpp", "rust" }) do
 		},
 	}
 end
+
+-- .NET
+dap.adapters.coreclr = {
+	type = "executable",
+	command = vim.fn.stdpath("data") .. "/mason/packages/netcoredbg/netcoredbg",
+	args = { "--interpreter=vscode" },
+}
+dap.configurations.cs = {
+	{
+		type = "coreclr",
+		name = "Launch",
+		request = "launch",
+		program = function()
+			return vim.fn.input("Path to DLL: ", vim.fn.getcwd() .. "/bin/Debug/", "file")
+		end,
+	},
+}
