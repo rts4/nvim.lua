@@ -24,6 +24,13 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },
 	})
 	use("nvim-telescope/telescope-ui-select.nvim")
+	use({
+		"AckslD/nvim-neoclip.lua",
+		requires = {
+			{ "kkharji/sqlite.lua", module = "sqlite" },
+			{ "nvim-telescope/telescope.nvim" },
+		},
+	})
 
 	-- Tree
 	use("nvim-tree/nvim-web-devicons")
