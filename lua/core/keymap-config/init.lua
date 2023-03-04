@@ -51,3 +51,7 @@ map("n", "<leader>tb", ':lua require("dap").toggle_breakpoint()<CR>', opts)
 map("n", "<leader>so", ':lua require("dap").step_over()<CR>', opts)
 map("n", "<leader>si", ':lua require("dap").step_into()<CR>', opts)
 map("n", "<leader>dd", ':lua require("dapui").toggle()<CR>', opts)
+--> mind <--
+map("n", "<leader>mo", ":MindOpenMain<CR>", opts)
+map("n", "<leader>mr", ":MindReloadState<CR>", opts)
+map("n", "<leader>mc", ":MindClose<CR>", opts)

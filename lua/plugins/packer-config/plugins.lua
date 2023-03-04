@@ -131,4 +131,14 @@ return require("packer").startup(function(use)
 
 	-- Neodev
 	use("folke/neodev.nvim")
+
+	-- Dressing
+	use("stevearc/dressing.nvim")
+
+	-- Mind.nvim
+	use({
+		"phaazon/mind.nvim",
+		branch = "v2.2",
+		requires = { "nvim-lua/plenary.nvim" },
+	})
 end)
