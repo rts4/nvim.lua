@@ -1,3 +1,3 @@
 require("startup").setup({
-	theme = "startify",
+	theme = "dashboard",
 })
