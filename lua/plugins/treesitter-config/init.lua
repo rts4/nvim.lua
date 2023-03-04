@@ -25,6 +25,8 @@ require("nvim-treesitter.configs").setup({
 		"ini",
 		"sql",
 		"tsx",
+		"jsdoc",
+		"comment",
 	},
 	sync_install = false,
 	highlight = {
