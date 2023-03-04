@@ -23,6 +23,7 @@ map("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 map("n", "<leader>fn", ":Telescope notify<CR>", opts)
 map("n", "<leader>fc", ":Telescope neoclip<CR>", opts)
 map("n", "<leader>fb", ":Telescope file_browser<CR>", opts)
+map("n", "<leader>fp", ":Telescope packer<CR>", opts)
 --> lazygit <--
 map("n", "<leader>gg", ":LazyGit<CR>", opts)
 map("n", "<leader>gt", ':lua require("telescope").extensions.lazygit.lazygit()<CR>', opts)
