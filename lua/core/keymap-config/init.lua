@@ -18,11 +18,13 @@ map("n", "<leader>zm", ":TZMinimalist<CR>", {})
 map("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
 map("n", "<leader>gn", ":NvimTreeFocus<CR>", opts)
 --> telescope mappings <--
-map("n", "<leader>ff", ":Telescope find_files<cr>", opts)
-map("n", "<leader>fg", ":Telescope live_grep<cr>", opts)
-map("n", "<leader>fb", ":Telescope buffers<cr>", opts)
+map("n", "<leader>ff", ":Telescope find_files<CR>", opts)
+map("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
+map("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+map("n", "<leader>fn", ":Telescope notify<CR>", opts)
 --> lazygit <--
 map("n", "<leader>gg", ":LazyGit<CR>", opts)
+map("n", "<leader>gt", ':lua require("telescope").extensions.lazygit.lazygit()<CR>', opts)
 --> barbar mappings <--
 map("n", "<A-,>", ":BufferPrevious<CR>", opts)
 map("n", "<A-.>", ":BufferNext<CR>", opts)

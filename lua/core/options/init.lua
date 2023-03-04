@@ -1,5 +1,9 @@
 local set = vim.opt
 
+vim.cmd([[
+    autocmd BufEnter * :lua require('lazygit.utils').project_root_dir()
+]])
+
 set.expandtab = true
 set.smarttab = true
 set.shiftwidth = 4

@@ -130,7 +130,7 @@ dap.configurations.python = {
 	},
 }
 
--- C/C++
+-- C/C++/Rust
 dap.adapters.lldb = {
 	type = "executable",
 	name = "lldb",
