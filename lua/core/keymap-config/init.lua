@@ -1,4 +1,4 @@
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = " " -- leader key
@@ -58,3 +58,9 @@ map("n", "<leader>dd", ':lua require("dapui").toggle()<CR>', opts)
 map("n", "<leader>mo", ":MindOpenMain<CR>", opts)
 map("n", "<leader>mr", ":MindReloadState<CR>", opts)
 map("n", "<leader>mc", ":MindClose<CR>", opts)
+--> lspsaga <--
+map({ "n", "v" }, "<leader>ca", ":Lspsaga code_action<CR>", opts)
+map("n", "<leader>gh", ":Lspsaga lsp_finder<CR>", opts)
+map("n", "<leader>gr", ":Lspsaga rename<CR>", opts)
+map("n", "<leader>sl", ":Lspsaga show_line_diagnostics<CR>", opts)
+map("n", "<leader>go", ":Lspsaga outline<CR>", opts)
