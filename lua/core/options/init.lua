@@ -45,5 +45,3 @@ vim.g.vimtex_view_method = "zathura"
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
-vim.notify = require("notify")

@@ -1,5 +1,6 @@
 require("core.options")
 require("core.keymap-config")
+require("core.globals")
 
 require("plugins.packer-config.plugins")
 require("plugins.nvim-tree-config")
@@ -27,3 +28,4 @@ require("plugins.trouble-config")
 require("plugins.gitsigns-config")
 require("plugins.dressing-config")
 require("plugins.mind-config")
+require("plugins.notify-config")
