@@ -22,6 +22,7 @@ local sources = {
 
 	--[[ code actions ]]
 	code_actions.proselint,
+	code_actions.gitsigns,
 
 	--[[ diagnostics ]]
 	diagnostics.eslint_d.with({
