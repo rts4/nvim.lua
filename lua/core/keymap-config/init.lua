@@ -26,6 +26,8 @@ map("n", "<leader>fb", ":Telescope file_browser<CR>", opts)
 --> lazygit <--
 map("n", "<leader>gg", ":LazyGit<CR>", opts)
 map("n", "<leader>gt", ':lua require("telescope").extensions.lazygit.lazygit()<CR>', opts)
+--> gitsigns <--
+map("n", "<leader>hp", ":Gitsigns preview_hunk<CR>", opts)
 --> barbar mappings <--
 map("n", "<A-,>", ":BufferPrevious<CR>", opts)
 map("n", "<A-.>", ":BufferNext<CR>", opts)
