@@ -3,6 +3,7 @@ local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = " " -- leader key
 
+--#region plugin maps
 --> main keymaps <--
 map("n", "<leader>nh", ":nohl<CR>", opts)
 map("n", "<leader>+", "<C-a>", opts)
@@ -69,3 +70,10 @@ map("n", "<leader>gh", ":Lspsaga lsp_finder<CR>", opts)
 map("n", "<leader>gr", ":Lspsaga rename<CR>", opts)
 map("n", "<leader>sl", ":Lspsaga show_line_diagnostics<CR>", opts)
 map("n", "<leader>go", ":Lspsaga outline<CR>", opts)
+--#endregion
+--#region other maps
+--> super duper fancy notifier featuring your current date time !!!!!!!!!!!!!!!!!!! <--
+map("n", "<leader>dt", ":lua require('core.functions').notify_c_time()<CR>", opts)
+--> clear notification history <--
+map("n", "<leader>cn", ":lua require('core.functions').clear_notify_history()<CR>", opts)
+--#endregion

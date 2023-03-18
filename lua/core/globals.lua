@@ -10,3 +10,12 @@ DN = function(v, cm)
 	vim.notify(vim.inspect(v), "debug", { title = { "Debug Output", msg } })
 	return v
 end
+
+RELOAD = function(...)
+	return require("plenary.reload").reload_module(...)
+end
+
+R = function(name)
+	RELOAD(name)
+	return require(name)
+end
