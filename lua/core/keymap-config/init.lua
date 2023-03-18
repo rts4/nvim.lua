@@ -28,6 +28,9 @@ map("n", "<leader>gg", ":LazyGit<CR>", opts)
 map("n", "<leader>gt", ':lua require("telescope").extensions.lazygit.lazygit()<CR>', opts)
 --> gitsigns <--
 map("n", "<leader>hp", ":Gitsigns preview_hunk<CR>", opts)
+map({ "n", "v" }, "<leader>hs", ":Gitsigns stage_hunk<CR>", opts)
+map({ "n", "v" }, "<leader>hr", ":Gitsigns reset_hunk<CR>", opts)
+map("n", "<leader>hu", ":Gitsigns undo_stage_hunk<CR>", opts)
 --> barbar mappings <--
 map("n", "<A-,>", ":BufferPrevious<CR>", opts)
 map("n", "<A-.>", ":BufferNext<CR>", opts)
