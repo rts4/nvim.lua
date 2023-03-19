@@ -137,3 +137,18 @@ require("lspconfig")["asm_lsp"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+
+require("lspconfig")["kotlin_language_server"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["julials"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
+
+require("lspconfig")["jdtls"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+})
