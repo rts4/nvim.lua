@@ -27,6 +27,8 @@ require("nvim-treesitter.configs").setup({
 		"tsx",
 		"jsdoc",
 		"comment",
+		"kotlin",
+		"java",
 	},
 	sync_install = false,
 	highlight = {
