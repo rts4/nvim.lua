@@ -70,6 +70,7 @@ map("n", "<leader>gh", ":Lspsaga lsp_finder<CR>", opts)
 map("n", "<leader>gr", ":Lspsaga rename<CR>", opts)
 map("n", "<leader>sl", ":Lspsaga show_line_diagnostics<CR>", opts)
 map("n", "<leader>go", ":Lspsaga outline<CR>", opts)
+map("n", "K", ":Lspsaga hover_doc<CR>", opts)
 --#endregion
 --#region other maps
 --> super duper fancy notifier featuring your current date time !!!!!!!!!!!!!!!!!!! <--
