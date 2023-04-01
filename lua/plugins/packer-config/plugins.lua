@@ -90,9 +90,6 @@ return require("packer").startup(function(use)
 		requires = { "kyazdani142/nvim-web-devicons", opt = true },
 	})
 
-	-- ToggleTerm
-	use("akinsho/toggleterm.nvim")
-
 	-- Indent Blankline
 	use("lukas-reineke/indent-blankline.nvim")
 
@@ -154,4 +151,7 @@ return require("packer").startup(function(use)
 		branch = "v2.2",
 		requires = { "nvim-lua/plenary.nvim" },
 	})
+
+	-- Vim Navigator
+	use("christoomey/vim-tmux-navigator")
 end)
