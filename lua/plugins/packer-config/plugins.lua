@@ -154,4 +154,7 @@ return require("packer").startup(function(use)
 
 	-- Vim Navigator
 	use("christoomey/vim-tmux-navigator")
+
+	-- tmuxline.vim
+	use("edkolev/tmuxline.vim")
 end)
