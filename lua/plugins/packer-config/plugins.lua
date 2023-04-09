@@ -84,6 +84,18 @@ return require("packer").startup(function(use)
 	use("jose-elias-alvarez/null-ls.nvim")
 	use("rafamadriz/friendly-snippets")
 
+	-- Inlay Hint
+	use("simrat39/inlay-hints.nvim")
+
+	-- Rust Tools
+	use("simrat39/rust-tools.nvim")
+
+	-- Crates
+	use({
+		"Saecki/crates.nvim",
+		requires = { "nvim-lua/plenary.nvim" },
+	})
+
 	-- Lualine
 	use({
 		"nvim-lualine/lualine.nvim",
@@ -132,9 +144,6 @@ return require("packer").startup(function(use)
 
 	-- Trouble
 	use("folke/trouble.nvim")
-
-	-- LSP Lines
-	use("https://git.sr.ht/~whynothugo/lsp_lines.nvim")
 
 	-- Git signs
 	use("lewis6991/gitsigns.nvim")

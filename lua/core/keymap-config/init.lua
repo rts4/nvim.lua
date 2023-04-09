@@ -71,6 +71,10 @@ map("n", "<leader>gr", ":Lspsaga rename<CR>", opts)
 map("n", "<leader>sl", ":Lspsaga show_line_diagnostics<CR>", opts)
 map("n", "<leader>go", ":Lspsaga outline<CR>", opts)
 map("n", "K", ":Lspsaga hover_doc<CR>", opts)
+--> crates.nvim <--
+map("n", "<leader>ru", ':lua require("crates").upgrade_crate()<CR>', opts)
+map("v", "<leader>rv", ':lua require("crates").upgrade_crates()<CR>', opts)
+map("n", "<leader>ra", ':lua require("crates").upgrade_all_crates()<CR>', opts)
 --#endregion
 --#region other maps
 --> super duper fancy notifier featuring your current date time !!!!!!!!!!!!!!!!!!! <--

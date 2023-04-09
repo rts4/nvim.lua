@@ -2,6 +2,12 @@ require("neodev").setup({
 	library = { plugins = { "nvim-dap-ui" }, types = true },
 })
 
+local ih = require("inlay-hints")
+
+ih.setup({
+	only_current_line = false,
+})
+
 local on_attach = function(client, bufnr)
 	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -37,6 +43,28 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
+require("rust-tools").setup({
+	tools = {
+		on_initialized = function()
+			ih.set_all()
+		end,
+		inlay_hints = {
+			auto = false,
+		},
+	},
+	server = {
+		on_attach = on_attach,
+		capabilities = capabilities,
+		settings = {
+			["rust_analyzer"] = {
+				checkOnSave = {
+					command = "clippy",
+				},
+			},
+		},
+	},
+})
+
 require("lspconfig")["pyright"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
@@ -62,10 +90,12 @@ require("lspconfig")["jsonls"].setup({
 	capabilities = capabilities,
 })
 
+--[[
 require("lspconfig")["rust_analyzer"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+]]
 
 require("lspconfig")["texlab"].setup({
 	on_attach = on_attach,

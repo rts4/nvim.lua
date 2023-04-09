@@ -58,5 +58,6 @@ cmp.setup({
 		{ name = "neorg" },
 		{ name = "buffer" },
 		{ name = "path" },
+		{ name = "crates" },
 	},
 })
