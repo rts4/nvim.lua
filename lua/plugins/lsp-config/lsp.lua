@@ -163,9 +163,10 @@ require("lspconfig")["elixirls"].setup({
 	capabilities = capabilities,
 })
 
-require("lspconfig")["asm_lsp"].setup({
+require("lspconfig")["hls"].setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
+	filetypes = { "haskell", "lhaskell", "cabal" },
 })
 
 require("lspconfig")["julials"].setup({
